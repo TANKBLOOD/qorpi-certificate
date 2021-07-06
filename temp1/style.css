@@ -1,0 +1,86 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    
+}
+
+.main-wraper {
+    display: grid;
+}
+
+#cert-head {
+    padding: 20px;
+    margin-top: 75px;
+    width: 100%;
+    background: linear-gradient(to right, rgb(51, 51, 51), rgba(51, 51, 51, 0.8));
+    display: flex;
+    justify-content: flex-start;
+}
+
+#head-desc {
+    padding: 0 10%;
+}
+#head-desc > h1 {
+    color: white;
+    font-weight: bold;
+}
+#head-desc > p {
+    margin-top: -1.7em;
+    padding-top: 0;
+}
+
+#logo {
+    position: absolute;
+    right: 12%;
+    top:18px;
+    width: 22%;
+	height: 250px;
+	transform: skew(-20deg);
+	background: rgb(241, 241, 241);
+    border-radius: 3px;
+}
+#triangle-up{
+    width: 0;
+	height: 0;
+    right: 5.8%;
+    top: 18px;
+	border-left: 19.6px solid transparent;
+	border-right: 40px solid transparent;
+	border-bottom: 57px solid rgb(202, 202, 202);
+    position: absolute;
+}
+#triangle-down{
+    width: 0;
+	height: 0;
+    right: 35.6%;
+    top: 203px;
+	border-left: 40px solid transparent;
+	border-right: 22px solid transparent;
+	border-top: 65px solid rgb(202, 202, 202);
+    position: absolute;
+}
+
+#head-date {
+
+}
+
+#cert-body {
+    padding: 75px 11%;
+}
+
+#body-start {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#user-name {
+    font-size: 80px;
+    font-weight: bold;
+}
+
+.cert-footer {
+
+}
