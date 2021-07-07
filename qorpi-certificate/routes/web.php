@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\CertificateController;
+use App\Http\Controllers\CourseController;
+use App\Models\Course;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,3 +29,8 @@ Route::post('storeExcelForm', [CertificateController::class, 'storeCertificateEx
 
 Route::get('certificateList', [CertificateController::class, 'index'])->name('certificate.index');
 Route::get('certificate/export/{id}', [CertificateController::class, 'exportCertificate'])->name('certificate.export');
+
+
+Route::get('course/create', [CourseController::class, 'create'])->name('course.create');
+Route::post('course/store', [CourseController::class, 'store'])->name('course.store');
+Route::get('course/index', [CourseController::class, 'index'])->name('course.index');
