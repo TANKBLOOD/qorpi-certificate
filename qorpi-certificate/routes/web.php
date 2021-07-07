@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CertificateController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +21,6 @@ Route::get('/', function () {
 Route::get('temp1', function() {
     return view('certificates-templates.template1');
 });
+
+Route::get('importExcelForm', [CertificateController::class, 'importCertificatesExcelModeForm'])->name('certificate.import.excel');
+Route::post('storeExcelForm', [CertificateController::class, 'storeCertificateExcelMode'])->name('certificate.store.excel');
