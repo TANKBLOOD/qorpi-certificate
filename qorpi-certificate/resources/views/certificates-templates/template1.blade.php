@@ -12,21 +12,17 @@
         <div id="cert-head">
             <div id="head-desc">
                 <h1>CERTIFICATE</h1>
-                <p>OF ACHIEVEMENTS <span id="head-date">2017</span></p>
+                <p>OF ACHIEVEMENTS <span id="head-date">{{$certInfo->course_date}}</span></p>
             </div>
-
-            <div id="triangle-up">
-            </div>
-            <div id="triangle-down"></div>
         </div>
         <div id="cert-body">
             <div>
                 <div id="body-start">This is to certify that <span>Ms</span></div>
                 <h1 id="user-name">
-                    Name Surname
+                    {{$certInfo->student_name}}
                 </h1>
                 <div id="body-text">
-                    with <span></span> code has participated in the <span></span> course held in the Qorpi Research and Training Academy, Tehran-Iran <span></span>
+                    with <span style="font-weight: bold; font-size:larger;">{{$certInfo->student_code}}</span> code has participated in the <span style="font-weight: bold;font-size:larger">{{$certInfo->course_name}} course</span> held in the <span style="font-weight: bold;font-size:larger;">Qorpi</span> Research and Training Academy, Tehran-Iran <span></span>
                 </div>
             </div>
         </div>

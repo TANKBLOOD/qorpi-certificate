@@ -24,3 +24,6 @@ Route::get('temp1', function() {
 
 Route::get('importExcelForm', [CertificateController::class, 'importCertificatesExcelModeForm'])->name('certificate.import.excel');
 Route::post('storeExcelForm', [CertificateController::class, 'storeCertificateExcelMode'])->name('certificate.store.excel');
+
+Route::get('certificateList', [CertificateController::class, 'index'])->name('certificate.index');
+Route::get('certificate/export/{id}', [CertificateController::class, 'exportCertificate'])->name('certificate.export');
