@@ -15,14 +15,10 @@ class CertificateInfoImport implements ToModel, WithHeadingRow
     */
     public function model(array $row)
     {
-        $time = strtotime($row['course_date']);
-        $newformat = date('Y-m-d',$time);
-
         return new Certificate([
             'student_name'=> $row['student_name'],
             'student_code'=> $row['student_code'],
-            'course_name'=> $row['course_name'],
-            'course_date'=> $newformat
+            'course_id'=> $row['course_id']
         ]);
     }
 }

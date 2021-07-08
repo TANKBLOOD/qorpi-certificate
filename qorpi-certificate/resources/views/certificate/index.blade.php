@@ -15,6 +15,7 @@
                 <th>Student Code</th>
                 <th>Course Name</th>
                 <th>Course Date</th>
+                <th>Qr code</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -24,9 +25,10 @@
                     <td>{{$cert->id}}</td>
                     <td>{{$cert->student_name}}</td>
                     <td>{{$cert->student_code}}</td>
-                    <td>{{$cert->course_name}}</td>
-                    <td>{{$cert->course_date}}</td>
-                    <td><a href="/certificate/export/{{$cert->id}}">Export</a></td>
+                    <td>{{$cert->course->name}}</td>
+                    <td>{{$cert->course->course_date}}</td>
+                    <td><img src="{{asset($cert->course->qr_code_path)}}" alt=""></td>
+                    <td><a href="/certificate/export/{{$cert->id}}">View</a> <a href="/certificate/download/{{$cert->id}}">export</a></td>
                 </tr>
             @endforeach
         </tbody>

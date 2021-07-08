@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Course extends Model
 {
     use HasFactory;
+
+    public function certificates() {
+        return $this->hasMany(Certificate::class, 'course_id');
+    }
 }

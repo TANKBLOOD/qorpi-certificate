@@ -15,10 +15,9 @@ class CreateCertificatesTable extends Migration
     {
         Schema::create('certificates', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('course_id');
             $table->string('student_name', 128);
             $table->string('student_code', 10);
-            $table->string('course_name', 128);
-            $table->date('course_date');
             $table->timestamps();
         });
     }

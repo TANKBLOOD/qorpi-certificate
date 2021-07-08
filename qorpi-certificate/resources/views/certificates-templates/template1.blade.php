@@ -1,10 +1,138 @@
+@php
+    $certDate= strtotime($certInfo->course->course_date);
+    $certYear= date("Y", $certDate);
+@endphp
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{asset('css/templates/template1/style.css')}}">
+    <style>
+        * {
+    box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        #main-wraper {
+            width: 210mm;
+            margin: auto;
+        }
+
+        #cert-head {
+            padding: 20px;
+            width: 100%;
+            background: linear-gradient(to right, rgb(51, 51, 51), rgba(51, 51, 51, 0.8));
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        #head-desc {
+            padding: 0 10%;
+        }
+        #head-desc > h1 {
+            color: white;
+            font-weight: bold;
+            font-size: 50px;
+        }
+        #head-desc > p {
+            color: white;
+            font-weight: bold;
+            margin-top: -1.7em;
+            padding-top: 0;
+        }
+
+        #logo {
+            /* position: absolute; */
+            display: flex;
+            content: "hello";
+            width: 22%;
+            height: 295px;
+            margin-left: 8%;
+            /* transform: skew(-20deg); */
+            /* background: rgb(241, 241, 241); */
+            border-radius: 3px;
+        }
+
+        #logo-svg {
+            text-align:center;
+            margin-top: 50px;
+        }
+        #logo-svg::after {
+            display: block;
+            text-align: center;
+            margin-left: 25px;
+            content: 'Al & ML Workgroup';
+        }
+        /* #logo::before{
+            content: "";
+            width: 0;
+            height: 0;
+            right: -59.5px;
+            top: 0;
+            border-left: 0px solid transparent;
+            border-right: 60px solid transparent;
+            border-bottom: 57px solid rgb(202, 202, 202);
+            position: absolute;
+        }
+        #logo::after{
+            content: "";
+            width: 0;
+            height: 0;
+            left: -70px;
+            bottom: 0;
+            border-left: 70px solid transparent;
+            border-right: 0px solid transparent;
+            border-top: 65px solid rgb(202, 202, 202);
+            position: absolute;
+        } */
+
+        #head-date {
+
+        }
+
+        #cert-body {
+            padding: 75px 11%;
+        }
+
+        #body-start {
+            margin-top: 0px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        #user-name {
+            margin-top: -5px;
+            font-size: 80px;
+            font-weight: bold;
+        }
+
+        #body-text {
+            margin-top: -20px;
+            font-size:large;
+        }
+        #cert-footer {
+            margin: 0%;
+        }
+
+        #company-info {
+            margin-left: 10.8%;
+        }
+
+        #company-info > p {
+            font-size: large;
+        }
+
+        #course-qr-code {
+            margin-left: 55%;
+            margin-top: 58px;
+        }
+
+    </style>
     <title>certificate|Template 1</title>
 </head>
 <body>
@@ -12,7 +140,7 @@
         <div id="cert-head">
             <div id="head-desc">
                 <h1>CERTIFICATE</h1>
-                <p>OF ACHIEVEMENTS <span id="head-date">{{$certInfo->course_date}}</span></p>
+                <p>OF ACHIEVEMENTS <span id="head-date">{{$certYear}}</span></p>
             </div>
         </div>
         <div id="cert-body">
@@ -22,7 +150,7 @@
                     {{$certInfo->student_name}}
                 </h1>
                 <div id="body-text">
-                    with <span style="font-weight: bold; font-size:larger;">{{$certInfo->student_code}}</span> code has participated in the <span style="font-weight: bold;font-size:larger">{{$certInfo->course_name}} course</span> held in the <span style="font-weight: bold;font-size:larger;">Qorpi</span> Research and Training Academy, Tehran-Iran <span></span>
+                    with <span style="font-weight: bold; font-size:larger;">{{$certInfo->student_code}}</span> code has participated in the <span style="font-weight: bold;font-size:larger">{{$certInfo->course->name}} course</span> held in the <span style="font-weight: bold;font-size:larger;">Qorpi</span> Research and Training Academy, Tehran-Iran <span>{{date("d F , Y")}}</span>
                 </div>
             </div>
         </div>
@@ -105,7 +233,7 @@
                     </svg>
                 </div>
                 <div id="course-qr-code">
-                    <img src="{{asset('images/templates/template1/photo_2021-07-07_00-16-27.jpg')}}" alt="your certificate qr codeS">
+                    <img src="{{asset($certInfo->course->qr_code_path)}}" alt="your certificate qr codeS">
                 </div>
             </div>
 

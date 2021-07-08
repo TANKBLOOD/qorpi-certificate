@@ -7,8 +7,9 @@ body {
 
 }
 
-.main-wraper {
-    display: grid;
+#main-wraper {
+    width: 210mm;
+    margin: auto;
 }
 
 #cert-head {

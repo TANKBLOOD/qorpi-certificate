@@ -16,7 +16,10 @@ class CourseController extends Controller
         return view('course.create');
     }
     public function store(Request $request) {
-        DB::insert('insert into courses (name, course_date) values (?, ?)', [$request->courseName, $request->courseDate]);
+        $imageName = $request->file('courseQrCode')->hashName();
+        $request->courseQrCode->move(public_path('images/coursesQrCode'), $imageName);
+
+        DB::insert('insert into courses (name, course_date, qr_code_path) values (?, ?, ?)', [$request->courseName, $request->courseDate, 'images/coursesQrCode/'.$imageName]);
         return "gg";
     }
 }

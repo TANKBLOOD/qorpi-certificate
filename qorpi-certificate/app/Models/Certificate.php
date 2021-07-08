@@ -11,5 +11,9 @@ class Certificate extends Model
 
     protected $table= "certificates";
 
-    protected $fillable= ['student_name', 'student_code', 'course_name', 'course_date'];
+    protected $fillable= ['student_name', 'student_code', 'course_id'];
+
+    public function course() {
+        return $this->belongsTo(Course::class);
+    }
 }
