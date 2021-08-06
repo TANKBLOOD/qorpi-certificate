@@ -10,19 +10,23 @@
     <table>
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Date</th>
+                <th>id</th>
+                <th>course name</th>
+                <th>course date</th>
                 <th>action</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($courses as $course)
                 <tr>
+                    <td>{{$course->id}}</td>
                     <td>{{$course->name}}</td>
                     <td>{{$course->course_date}}</td>
+                    <td><button><a href="" style="text-decoration: none;">delete</a></button></td>
                 </tr>
             @endforeach
         </tbody>
     </table>
+    <button type="button"><a href="/course/create" style="text-decoration: none;">Create Course</a></button>
 </body>
 </html>

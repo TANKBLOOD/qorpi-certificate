@@ -150,7 +150,7 @@
                     {{$certInfo->student_name}}
                 </h1>
                 <div id="body-text">
-                    with <span style="font-weight: bold; font-size:larger;">{{$certInfo->student_code}}</span> code has participated in the <span style="font-weight: bold;font-size:larger">{{$certInfo->course->name}} course</span> held in the <span style="font-weight: bold;font-size:larger;">Qorpi</span> Research and Training Academy, Tehran-Iran <span>{{date("d F , Y")}}</span>
+                    with <span style="font-weight: bold; font-size:larger;">{{$certInfo->student_code}}</span> code has participated in the <span style="font-weight: bold;font-size:larger">{{$certInfo->course->name}} course</span> held in the <span style="font-weight: bold;font-size:larger;">Qorpi</span> Research and Training Academy, Tehran-Iran <span>{{date("d F , Y", $certDate)}}</span>
                 </div>
             </div>
         </div>
